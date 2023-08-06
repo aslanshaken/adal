@@ -127,7 +127,7 @@ export default function Album() {
                     </Typography>
                   </CardContent>
                   <CardActions>
-                    <Typography variant="h5" color='ButtonText' fontWeight={700} component="h2" sx={{ fontSize: '3vh' }}>1 lb - $15</Typography>
+                    <Typography variant="h5" color='GrayText' fontWeight={700} component="h3" sx={{ fontSize: '2.7vh' }}>1 LB - $15</Typography>
                   </CardActions>
                   {card.available ? (
                     <CardActions>
