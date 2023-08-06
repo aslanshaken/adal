@@ -1,0 +1,84 @@
+.header {
+  background-color: #103021;
+  color: white;
+  padding: 1%;
+  font-family: Arial, sans-serif;
+  font-weight: 600;
+}
+
+.mainImage {
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  filter: brightness(0.5);
+  width: 100vw;
+  height: auto;
+  overflow: hidden;
+  color: white;
+  background: rgba(2, 5, 2, 0.3);
+}
+
+/* .mainImage::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+} */
+
+.content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  font-family: Arial, sans-serif;
+}
+
+/* Add a blurred background effect for the text */
+.content h1::before,
+.content p::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.3);
+  filter: blur(52px);
+  z-index: -1;
+}
+
+.content h1 {
+  font-size: 14vh;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.content p {
+  font-size: 6vh;
+  position: relative;
+  font-weight: 700;
+}
+
+.mainButton {
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.orderButton {
+  background-color: #103021 !important;
+  color: white !important;
+  font-weight: 700 !important;
+  font-size: x-large !important;
+}
+
+.orderButton:hover {
+  background-color: white !important;
+  color: black !important;
+}
