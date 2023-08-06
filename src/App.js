@@ -35,17 +35,17 @@ const cards = [
   {
     src: `${Cilantro}`, alt: `${Cilantro}`, title: "Frozen Dumplings with Beef, Cilantro and Broth",
     ing: "Wheat flour, eggs, water, ground Halal beef, onions, cilantro, back pepper and salt",
-    link: 'https://buy.stripe.com/14k296eyr1hz5ws146'
+    link: 'https://buy.stripe.com/14k296eyr1hz5ws146', available: false
   },
   {
     src: `${Beef}`, alt: `${Beef}`, title: "Frozen Dumplings with Beef",
     ing: "Wheat flour, eggs, water, ground Halal beef, onions, back pepper and salt",
-    link: 'https://buy.stripe.com/3csbJG61V6BTf72145'
+    link: 'https://buy.stripe.com/3csbJG61V6BTf72145', available: true
   },
   {
     src: `${Potato}`, alt: `${Potato}`, title: "Frozen Dumplings with Potato",
     ing: "Wheat flour, eggs, water, potato, milk, butter and salt",
-    link: "https://buy.stripe.com/14k9Byaibd0haQM6or"
+    link: "https://buy.stripe.com/14k9Byaibd0haQM6or", available: true
   }
 ];
 
@@ -129,13 +129,20 @@ export default function Album() {
                   <CardActions>
                     <Typography variant="h5" color='ButtonText' fontWeight={700} component="h2" sx={{ fontSize: '3vh' }}>1 lb - $15</Typography>
                   </CardActions>
-                  <CardActions>
-                    <Button size="small" href={card.link} target="_blank">Order Now</Button>
-                  </CardActions>
+                  {card.available ? (
+                    <CardActions>
+                      <Button size="small" href={card.link} target="_blank">Order Now</Button>
+                    </CardActions>
+                  ) : (
+                    <CardActions>
+                      <Button size="small" color='warning'>Out of Stock</Button>
+                    </CardActions>
+                  )}
                 </Card>
               </Grid>
             ))}
           </Grid>
+
         </Container>
       </main>
       <Paper
