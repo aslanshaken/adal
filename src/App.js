@@ -194,6 +194,9 @@ export default function Album() {
         <Typography variant="h6" align="center" gutterBottom>
           Adal Food
         </Typography>
+        <Typography variant="body1" align="center" gutterBottom>
+          Support: 929-928-5292
+        </Typography>
         <Typography
           variant="subtitle1"
           align="center"
