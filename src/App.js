@@ -141,8 +141,8 @@ export default function App() {
               spacing={2}
               justifyContent="center"
             >
-              <Button variant="contained" onClick={handleScroll}>Order Online</Button>
-              <Button variant="contained" color='inherit' onClick={handleScrollStores}>Find in Local Stores</Button>
+              <Button variant="contained" onClick={handleScroll} component='body' size='small'>Order Online</Button>
+              <Button variant="contained" color='inherit' onClick={handleScrollStores} component='body' size='small'>Find in Local Stores</Button>
             </Stack>
           </Container>
         </Box>
