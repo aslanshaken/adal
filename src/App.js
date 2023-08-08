@@ -19,6 +19,8 @@ import Beef from './images/beef.jpg'
 import Cilantro from './images/cilantro.jpg'
 import { Paper } from '@mui/material';
 import { useRef } from 'react';
+import './App.css';
+import CardHeader from '@mui/material/CardHeader';
 
 function Copyright() {
   return (
@@ -50,15 +52,48 @@ const cards = [
 ];
 
 
+const stores = [
+  {
+    title: 'Al Zaytoon Market',
+    address: '616 FM 685 Suite A104, Pflugerville, TX 78660',
+    out: false
+  },
+  {
+    title: 'Istanbul Market Atx',
+    address: '1700 Bryant Dr Suite.102, Round Rock, TX 78664',
+    out: false
+  },
+  {
+    title: 'Austin Meat Market',
+    address: '12129 Ranch Rd 620 Suit 530, Austin, TX 78750',
+    out: true
+  },
+  {
+    title: 'Borderless European Market',
+    address: '2121 W Parmer Ln #113, Austin, TX 78727',
+    out: true
+  },
+];
+
+
 const defaultTheme = createTheme();
 
-export default function Album() {
+export default function App() {
   const containerRef = useRef(null);
+  const containerStores = useRef(null);
 
   const handleScroll = () => {
     if (containerRef.current) {
       const scrollOffset = 50; // Adjust the offset as needed
       const topPosition = containerRef.current.getBoundingClientRect().top + window.pageYOffset - scrollOffset;
+      window.scrollTo({ top: topPosition, behavior: 'smooth' });
+    }
+  };
+
+  const handleScrollStores = () => {
+    if (containerStores.current) {
+      const scrollOffset = 150; // Adjust the offset as needed
+      const topPosition = containerStores.current.getBoundingClientRect().top + window.pageYOffset - scrollOffset;
       window.scrollTo({ top: topPosition, behavior: 'smooth' });
     }
   };
@@ -81,15 +116,22 @@ export default function Album() {
         >
           <Container maxWidth="sm" >
             <Typography
-              component="h2"
+              component="h3"
               variant="h3"
               align="center"
               color="text.primary"
               gutterBottom
             >
-              Frozen Halal Dumplings
+              Frozen <span className="zigzag"> Delicious</span> Dumplings
             </Typography>
-            <Typography variant="h5" align="center" color="text.secondary" paragraph>
+            <Typography
+              component="h3"
+              variant="h5"
+              align="center"
+              color="gray"
+              padding="15px"
+              marginBottom='35px'
+              paragraph>
               Enjoy the taste of simplicity with fresh ingredients, feel the care in
               every handmade creation, and have it all delivered to you for FREE
             </Typography>
@@ -100,10 +142,21 @@ export default function Album() {
               justifyContent="center"
             >
               <Button variant="contained" onClick={handleScroll}>Order Online</Button>
+              <Button variant="contained" color='inherit' onClick={handleScrollStores}>Find in Local Stores</Button>
             </Stack>
           </Container>
         </Box>
         <Container sx={{ py: 8 }} maxWidth="md" >
+          <Typography
+            component="h3"
+            variant="h5"
+            align="center"
+            color="gray"
+            fontWeight="bold"
+            marginBottom='35px'
+          >
+            Just Boil for 7 Minutes, No Steamer Needed!
+          </Typography>
           <Grid container spacing={3} ref={containerRef}>
             {cards.map((card) => (
               <Grid item key={card} xs={12} sm={6} md={4}>
@@ -188,6 +241,57 @@ export default function Album() {
           </Grid>
         </Grid>
       </Paper>
+
+      <Container disableGutters maxWidth="sm" component="main" sx={{ pt: 8, pb: 6 }}>
+        <Typography variant="h5" align="center" paddingLeft='4%' paddingRight='4%' fontWeight="bold" color="text.secondary" component="p" ref={containerStores}>
+          Where else you can find our frozen dumplings
+        </Typography>
+      </Container>
+      <Container maxWidth="md" component="main">
+        <Grid container spacing={5} alignItems="flex-end">
+          {stores.map((tier) => (
+            <Grid
+              item
+              key={tier.title}
+              xs={12}
+              sm={6}
+              md={4}
+            >
+              <Card>
+                <CardHeader
+                  title={tier.title}
+                  titleTypographyProps={{ align: 'center' }}
+                  subheaderTypographyProps={{
+                    align: 'center',
+                  }}
+                  sx={{
+                    backgroundColor: (theme) =>
+                      theme.palette.mode === 'light'
+                        ? theme.palette.grey[200]
+                        : theme.palette.grey[700],
+                  }}
+                />
+                <CardContent>
+
+                  <Typography component="body" variant="body" color="text.primary">
+                    {tier.address}
+                  </Typography>
+
+                  {tier.out ?
+                    <CardActions>
+                      <Button size="small" color='warning'>Out of Stock</Button>
+                    </CardActions>
+                    :
+                    <CardActions>
+                      <Button size="small" color="primary" >Available </Button>
+                    </CardActions>
+                  }
+                </CardContent>
+              </Card>
+            </Grid>
+          ))}
+        </Grid>
+      </Container>
 
       {/* Footer */}
       <Box sx={{ bgcolor: 'background.paper', p: 6 }} component="footer">
