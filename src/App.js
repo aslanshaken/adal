@@ -37,17 +37,17 @@ const cards = [
   {
     src: `${Cilantro}`, alt: `${Cilantro}`, title: "Frozen Dumplings with Beef, Cilantro and Broth",
     ing: "Wheat flour, eggs, water, ground Halal beef, onions, cilantro, back pepper and salt",
-    link: 'https://buy.stripe.com/14k296eyr1hz5ws146', available: false
+    link: 'https://buy.stripe.com/14k296eyr1hz5ws146', available: false, price: 15
   },
   {
     src: `${Beef}`, alt: `${Beef}`, title: "Frozen Dumplings with Beef",
     ing: "Wheat flour, eggs, water, ground Halal beef, onions, back pepper and salt",
-    link: 'https://buy.stripe.com/3csbJG61V6BTf72145', available: true
+    link: 'https://buy.stripe.com/3csbJG61V6BTf72145', available: true, price: 15
   },
   {
     src: `${Potato}`, alt: `${Potato}`, title: "Frozen Dumplings with Potato",
     ing: "Wheat flour, eggs, water, potato, milk, butter and salt",
-    link: "https://buy.stripe.com/14k9Byaibd0haQM6or", available: true
+    link: "https://buy.stripe.com/14k9Byaibd0haQM6or", available: true, price: 13
   }
 ];
 
@@ -180,7 +180,7 @@ export default function App() {
                     </Typography>
                   </CardContent>
                   <CardActions>
-                    <Typography variant="h5" color='GrayText' fontWeight={700} component="h3" sx={{ fontSize: '2.7vh' }}>1 LB - $15</Typography>
+                    <Typography variant="h5" color='GrayText' fontWeight={700} component="h3" sx={{ fontSize: '2.7vh' }}>${card.price} / 1lb</Typography>
                   </CardActions>
                   {card.available ? (
                     <CardActions>
