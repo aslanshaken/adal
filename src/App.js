@@ -122,7 +122,7 @@ export default function App() {
               color="text.primary"
               gutterBottom
             >
-              Frozen <span className="zigzag"> Delicious</span> Dumplings
+              🌿Frozen Dumplings
             </Typography>
             <Typography
               component="h3"
