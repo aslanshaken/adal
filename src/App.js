@@ -64,9 +64,9 @@ const stores = [
     out: false
   },
   {
-    title: 'Austin Meat Market',
+    title: 'Austin Halal Market',
     address: '12129 Ranch Rd 620 Suit 530, Austin, TX 78750',
-    out: true
+    out: false
   },
   {
     title: 'Borderless European Market',
