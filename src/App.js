@@ -36,12 +36,12 @@ function Copyright() {
 const cards = [
   {
     src: `${Cilantro}`, alt: `${Cilantro}`, title: "Frozen Dumplings with Beef, Cilantro and Broth",
-    ing: "Wheat flour, eggs, water, ground Halal beef, onions, cilantro, back pepper and salt",
+    ing: "Wheat flour, eggs, water, ground Halal beef, onions, cilantro, black pepper and salt",
     link: 'https://buy.stripe.com/14k296eyr1hz5ws146', available: false, price: 15
   },
   {
     src: `${Beef}`, alt: `${Beef}`, title: "Frozen Dumplings with Beef",
-    ing: "Wheat flour, eggs, water, ground Halal beef, onions, back pepper and salt",
+    ing: "Wheat flour, eggs, water, ground Halal beef, onions, black pepper and salt",
     link: 'https://buy.stripe.com/3csbJG61V6BTf72145', available: true, price: 15
   },
   {
