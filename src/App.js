@@ -12,7 +12,6 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import Logo from './images/logo.png'
 import LogoBlack from './images/logo-black.png'
 import MainImage from './images/main.jpg'
 import Potato from './images/potato.jpg'
