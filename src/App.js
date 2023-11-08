@@ -16,6 +16,7 @@ import LogoBlack from './images/logo-black.png'
 import MainImage from './images/main.jpg'
 import Potato from './images/potato.jpg'
 import Beef from './images/beef.jpg'
+import Chicken from './images/chicken.png'
 import Cilantro from './images/cilantro.jpg'
 import { Paper } from '@mui/material';
 import { useRef } from 'react';
@@ -35,20 +36,28 @@ function Copyright() {
 
 const cards = [
   {
-    src: `${Cilantro}`, alt: `${Cilantro}`, title: "Frozen Dumplings with Beef, Cilantro and Broth",
-    ing: "Wheat flour, eggs, water, ground Halal beef, onions, cilantro, black pepper and salt",
-    link: 'https://buy.stripe.com/8wM7tq61Vgctgb65ku', available: false, price: 11
-  },
-  {
     src: `${Beef}`, alt: `${Beef}`, title: "Frozen Dumplings with Beef",
     ing: "Wheat flour, eggs, water, ground Halal beef, onions, black pepper and salt",
     link: 'https://buy.stripe.com/8wM152eyrgct0c87sB', available: true, price: 10
-  },
+  }
+  ,
+  {
+    src: `${Chicken}`, alt: `${Chicken}`, title: "Frozen Dumplings with Potato",
+    ing: "Wheat flour, eggs, water, potato, milk, butter and salt",
+    link: "https://buy.stripe.com/aEUdRO8a3f8p4so3cn", available: true, price: 9
+  }
+  ,
   {
     src: `${Potato}`, alt: `${Potato}`, title: "Frozen Dumplings with Potato",
     ing: "Wheat flour, eggs, water, potato, milk, butter and salt",
     link: "https://buy.stripe.com/7sIaFC8a3e4l0c8cMT", available: true, price: 8
   }
+  ,
+  {
+    src: `${Cilantro}`, alt: `${Cilantro}`, title: "Frozen Dumplings with Beef, Cilantro and Broth",
+    ing: "Wheat flour, eggs, water, ground Halal beef, onions, cilantro, black pepper and salt",
+    link: 'https://buy.stripe.com/8wM7tq61Vgctgb65ku', available: false, price: 11
+  },
 ];
 
 
