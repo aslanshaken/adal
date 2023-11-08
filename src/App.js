@@ -13,6 +13,7 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Logo from './images/logo.png'
+import LogoBlack from './images/logo-black.png'
 import MainImage from './images/main.jpg'
 import Potato from './images/potato.jpg'
 import Beef from './images/beef.jpg'
@@ -27,7 +28,7 @@ function Copyright() {
     <Typography variant="body2" color="text.secondary" align="center">
       {'Copyright © '}
 
-      Adal Food {' '}
+      American Dumpling {' '}
       {new Date().getFullYear()}
     </Typography>
   );
@@ -37,17 +38,17 @@ const cards = [
   {
     src: `${Cilantro}`, alt: `${Cilantro}`, title: "Frozen Dumplings with Beef, Cilantro and Broth",
     ing: "Wheat flour, eggs, water, ground Halal beef, onions, cilantro, black pepper and salt",
-    link: 'https://buy.stripe.com/14k296eyr1hz5ws146', available: false, price: 15
+    link: 'https://buy.stripe.com/14k296eyr1hz5ws146', available: false, price: 11
   },
   {
     src: `${Beef}`, alt: `${Beef}`, title: "Frozen Dumplings with Beef",
     ing: "Wheat flour, eggs, water, ground Halal beef, onions, black pepper and salt",
-    link: 'https://buy.stripe.com/3csbJG61V6BTf72145', available: true, price: 15
+    link: 'https://buy.stripe.com/3csbJG61V6BTf72145', available: true, price: 10
   },
   {
     src: `${Potato}`, alt: `${Potato}`, title: "Frozen Dumplings with Potato",
     ing: "Wheat flour, eggs, water, potato, milk, butter and salt",
-    link: "https://buy.stripe.com/14k9Byaibd0haQM6or", available: true, price: 13
+    link: "https://buy.stripe.com/14k9Byaibd0haQM6or", available: true, price: 8
   }
 ];
 
@@ -103,7 +104,7 @@ export default function App() {
       <CssBaseline />
       <div position="fixed"  >
         <Toolbar sx={{ justifyContent: 'center', bgcolor: 'background.paper' }} >
-          <img src={Logo} alt="Logo" style={{ width: '250px', height: 'auto', marginTop: '30px' }} />
+          <img src={LogoBlack} alt="Logo" style={{ width: '450px', height: 'auto', marginBottom: '-60px' }} />
         </Toolbar>
       </div>
       <main>
@@ -115,7 +116,7 @@ export default function App() {
           }}
         >
           <Container maxWidth="sm" >
-            <Typography
+            {/* <Typography
               component="h3"
               variant="h3"
               align="center"
@@ -123,7 +124,7 @@ export default function App() {
               gutterBottom
             >
               🌿Frozen Dumplings
-            </Typography>
+            </Typography> */}
             <Typography
               component="h3"
               variant="h5"
@@ -131,9 +132,10 @@ export default function App() {
               color="gray"
               padding="15px"
               marginBottom='35px'
+              fontWeight="500"
               paragraph>
               Enjoy the taste of simplicity with fresh ingredients, feel the care in
-              every handmade creation, and have it all delivered to you for FREE
+              every handmade creation.
             </Typography>
             <Stack
               sx={{ pt: 4 }}
@@ -167,7 +169,7 @@ export default function App() {
                     component="div"
                     sx={{
                       // 16:9
-                      pt: '120%'
+                      pt: '87%'
                     }}
                     image={card.src}
                   />
@@ -180,7 +182,7 @@ export default function App() {
                     </Typography>
                   </CardContent>
                   <CardActions>
-                    <Typography variant="h5" color='GrayText' fontWeight={700} component="h3" sx={{ fontSize: '2.7vh' }}>${card.price} / 1lb</Typography>
+                    <Typography variant="h5" color='GrayText' fontWeight={700} component="h3" sx={{ fontSize: '2.7vh' }}>${card.price}</Typography>
                   </CardActions>
                   {card.available ? (
                     <CardActions>
@@ -296,7 +298,7 @@ export default function App() {
       {/* Footer */}
       <Box sx={{ bgcolor: 'background.paper', p: 6 }} component="footer">
         <Typography variant="h6" align="center" gutterBottom>
-          Adal Food
+          American Dumpling
         </Typography>
         <Typography variant="body1" align="center" gutterBottom>
           Support: 929-928-5292
