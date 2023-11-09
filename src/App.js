@@ -112,7 +112,7 @@ export default function App() {
       <CssBaseline />
       <div position="fixed"  >
         <Toolbar sx={{ justifyContent: 'center', bgcolor: 'background.paper' }} >
-          <img src={LogoBlack} alt="Logo" style={{ width: '450px', height: 'auto', marginBottom: '-60px' }} />
+          <img src={LogoBlack} alt="Logo" style={{ width: '400px', height: 'auto', marginBottom: '-60px' }} />
         </Toolbar>
       </div>
       <main>
